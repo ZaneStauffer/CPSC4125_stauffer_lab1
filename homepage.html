@@ -7,12 +7,47 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Hello, world!</title>
+    <title>To-Do List</title>
   </head>
     <body>
-        <h1>Hello, world!</h1>
-
+        <div class="container">
+            <div class="mb-2">
+                <div class="mt-2">
+                    <nav class="nav nav-pills flex-column flex-sm-row">
+                        <a class="flex-sm-fill text-sm-center nav-link active" href="homepage.html">To-Do List</a>
+                        <a class="flex-sm-fill text-sm-center nav-link" href="#">About</a>
+                    </nav>
+                </div>
+            </div>
+            <ul class="list-group" id="todo">
+                <!-- One li represents one entry. -->
+                <li class="list-group-item active">
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="contents">
+                                <p style="margin: 0 0 0 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+                            </div>
+                        </div>
+                       <div class="col-sm">
+                            <div class="float-right" style="margin: auto;">
+                                <button type="button" class="btn btn-default" style="padding: 0">
+                                    <i class="fa fa-trash fa-2x"></i>
+                                </button>
+                            </div>
+                       </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="d-flex flex-column">
+                <button type="button" class="btn btn-secondary" id="add-button">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
