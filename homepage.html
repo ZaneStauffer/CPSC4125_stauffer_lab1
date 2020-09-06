@@ -48,7 +48,26 @@
                 </button>
             </div>
         </div>
-        
+        <!-- Template for dynamic creation of list entries. -->
+        <template id="entry-template">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div class="contents">
+                            <p style="margin: 0 0 0 0;">Enter your text here!</p>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="float-right" style="margin: auto;">
+                            <!-- The button is hidden until the mouse is hovered over the entry. -->
+                            <button type="button" class="btn btn-default" style="padding: 0; visibility: hidden;">
+                                <i class="fa fa-trash fa-2x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-/LjQZzcpTzaYn7qWqRIWYC5l8FWEZ2bIHIz0D73Uzba4pShEcdLdZyZkI4Kv676E" crossorigin="anonymous"></script>
