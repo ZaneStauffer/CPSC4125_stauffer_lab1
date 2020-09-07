@@ -1,17 +1,20 @@
+/*
+Zane Stauccer, 9/7/2020
+CPSC 4125
+*/
+
 $(document).ready(() => {
-    // Entry hover functionality
-    $(document).on("mouseenter","li", function(){
+    // Entry hover functionality. We use on because we need to assign event delegates for elements that are dynamically created.
+    $(document).on("mouseenter","li", function(){ // For some reason JQuery doesn't like arrow functions, so we use function()
         $(this).attr('class', 'list-group-item active');
         $(this).find('button').css('visibility', 'visible');
-        //$(this).find('.editable').css('outline', 'solid');
     });
     $(document).on("mouseleave", "li", function(){
         $(this).attr('class', 'list-group-item');
         $(this).find('button').css('visibility', 'hidden');
-        //$(this).find('.editable').css('outline', 'none');
     });
 
-    // Delete button functionality
+    // Delete button functionality. Selector syntax for delegates is weird.
     $(document).on("click", 'li > .row > .col-sm > .float-right > button', function(){
         $(this).parents('li').remove();
     });
@@ -30,8 +33,8 @@ $(document).ready(() => {
             var $p = $("<p class=\"editable\" style=\"margin: 0 0 0 0;\"</p>").text($input.val());
             $input.replaceWith($p);
         };
-        $input.one('blur', save).focus();
-        $(document).on('keypress', function(e){
+        $input.one('blur', save).focus(); // If the user clicks away from the text area, it'll get saved.
+        $(document).on('keypress', function(e){ // If the user presses enter, it'll get saved.
             if(e.which == 13){
                 save();
             }
