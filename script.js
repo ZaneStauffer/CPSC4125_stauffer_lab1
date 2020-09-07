@@ -3,12 +3,12 @@ $(document).ready(() => {
     $(document).on("mouseenter","li", function(){
         $(this).attr('class', 'list-group-item active');
         $(this).find('button').css('visibility', 'visible');
-        $(this).find('.editable').css('outline', 'solid');
+        //$(this).find('.editable').css('outline', 'solid');
     });
     $(document).on("mouseleave", "li", function(){
         $(this).attr('class', 'list-group-item');
         $(this).find('button').css('visibility', 'hidden');
-        $(this).find('.editable').css('outline', 'none');
+        //$(this).find('.editable').css('outline', 'none');
     });
 
     // Delete button functionality
@@ -22,8 +22,8 @@ $(document).ready(() => {
     });
 
     // Edit functionality
-    $(document).on("click", ".editable", function(){
-        var $el = $(this);
+    $(document).on("click", "li", function(){
+        var $el = $(this).find(".editable");
         var $input = $('<textarea style=\"width:100%;\"/>').val($el.text());
         $el.replaceWith($input);
         var save = () => {
